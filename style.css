@@ -1,0 +1,969 @@
+@font-face {
+    font-family: font1;
+    src: url(/fonts/KFOmCnqEu92Fr1Mu4mxK\ \(1\).ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+#main {
+    position: relative;
+    background-color: #0A3DCE;
+    /* overflow: hidden; */
+}
+.blue-overlay{
+    height: 100vh;
+    width: 100vw;
+    background-color: #044CE3;
+    position: fixed;
+    top: -100%;
+    left: 0;
+    z-index: 100;
+}
+.blue-overlay img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.white-overlay{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    top: -100%;
+    left: 0;
+    z-index: 100;
+}
+#intropage{
+    width: 100vw;
+    height: 100vh;
+    background-color: #0A3DCE;
+    display: flex;
+    align-items: flex-end;
+    position: fixed;
+    padding-bottom: 10vw;
+    z-index: 100;
+}
+.textpart{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 12vw;
+    color: white;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+.toph1 , .btmh1, .rightper{
+    /* background-color: red; */
+    white-space: nowrap;
+    margin-top: 1px;
+    height: 12vh;
+    width: 35vw;
+    position: relative;
+    overflow: hidden;
+}
+.rightper{
+    width: 13vw;
+}
+.textpart h1{
+    font-size: 5vw;
+    font-weight: 300;
+    width: 100%;
+    height: 100%;
+    position: absolute; 
+    top: 150%;
+    rotate: 15deg;
+}
+.textpart h2{
+    font-size: 5vw;
+    font-weight: 300;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    text-align: right;
+    top: 150%;
+    rotate: 15deg;
+}
+
+#page1 {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+nav {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4vh 5vw;
+}
+
+.navr {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-right: 5vw;
+}
+
+nav img {
+    background-color: blue;
+    color: white;
+    width: 4.5vw;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+button {
+    font-size: 1vw;
+    border-radius: 25px;
+    padding: 10px 20px;
+    border: .8px solid rgba(255, 255, 255, 0.458);
+    color: white;
+    font-weight: 300;
+    background-color: transparent;
+    position: relative;
+    z-index: 3;
+    transition: border ease .5s;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.textstroke {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0);
+    transition: ease .5s border;
+}
+
+button::after {
+    content: "";
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    background-color: white;
+    left: 0;
+    color: #0049D9;
+    top: 100%;
+    transition: top cubic-bezier(.87, 0, .13, 1) .6s;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+}
+
+.copy-btn {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    color: #1e46b4;
+    left: 0;
+    top: -100%;
+    white-space: nowrap;
+    transition: top cubic-bezier(.87, 0, .13, 1) .6s;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.origin-btn {
+    color: #fff;
+    display: block;
+    transition: transform cubic-bezier(.87, 0, .13, 1) .6s;
+    z-index: -2;
+}
+
+button:hover::after,
+button:hover .copy-btn {
+    top: 0;
+}
+
+button:hover .origin-btn {
+    transform: translateY(200%);
+}
+
+#menubtn:hover .textstroke {
+    border: 1px solid rgba(255, 255, 255, 0.836);
+}
+
+.demobtn:hover {
+    border: .9px solid rgb(255, 255, 255);
+}
+
+
+#menubtn {
+    position: fixed;
+    right: 4vw;
+    z-index: 99;
+    font-size: 1.5vw;
+    padding: 6px 20px;
+    transition: border ease .2s;
+}
+
+#menubtn::after {
+    display: none;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+}
+
+.textarea {
+    width: 60%;
+    font-size: 3vw;
+    color: white;
+    padding: 22vw 0vw 0vw 10vw;
+}
+
+.textarea h1 {
+    font-weight: 300;
+    padding-bottom: 2.8vw;
+}
+
+.textbtm {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.5vw;
+    flex-wrap: wrap;
+}
+
+.textarea p {
+    width: 50%;
+    font-size: 1.2vw;
+    font-weight: 100;
+    line-height: 1.8vw;
+}
+
+.textarea button {
+    background-color: white;
+    color: #0956F4;
+    padding: 13px 40px;
+    display: flex;
+    align-items: center;
+    font-size: 1vw;
+    font-weight: 400;
+    border: none;
+}
+
+.learnbtn-copy {
+    color: white;
+}
+
+.learnbtn-origin {
+    color: #0956F4;
+}
+
+.learn_more-button::after {
+    background-color: black;
+}
+
+#page2 {
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    position: relative;
+    padding: 15vh 8vw;
+    color: white;
+}
+
+#page2 h3 {
+    font-size: 1.15vw;
+    font-weight: 200;
+    padding: 2vw 0vw;
+}
+
+#page2 h1 {
+    font-size: 4.2vw;
+    font-weight: 200;
+    color: rgba(255, 255, 255, 0.343);
+}
+
+#page3 {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+canvas {
+    max-width: 100vh;
+    max-width: 100vw;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+#page4 {
+    height: 100vh;
+    width: 100vw;
+    /* background: linear-gradient(to bottom, #0F37C9, #0D36C5); */
+    position: relative;
+    padding: 15vh 8vw;
+    color: white;
+}
+
+#page4 h3 {
+    font-size: 1.15vw;
+    font-weight: 200;
+    padding: 2vw 0vw;
+}
+
+#page4 h1 {
+    font-size: 4.2vw;
+    font-weight: 200;
+    color: rgba(255, 255, 255, 0.343);
+}
+
+#page5 {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+#page6 {
+    width: 100vw;
+    height: 100vh;
+    /* background: linear-gradient(to bottom, #0D34C4, #0A3DCE); */
+    position: absolute;
+    padding: 15vh 8vw;
+    color: white;
+    left: 0;
+    top: 0;
+    z-index: 2232;
+}
+
+#page6 h3 {
+    font-size: 1.15vw;
+    font-weight: 200;
+    padding: 2vw 0vw;
+}
+
+#page6 h1 {
+    font-size: 4.2vw;
+    font-weight: 200;
+    color: rgba(255, 255, 255, 0.343);
+}
+
+#page7 {
+    background-color: #0D34C4;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+    /* overflow-y: auto; */
+}
+
+#page7 .circle {
+    aspect-ratio: 1/1;
+    width: 110vh;
+    border-radius: 100%;
+    background-color: transparent;
+    border: .5px solid rgba(255, 255, 255, 0.469);
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inner-circle {
+    aspect-ratio: 1/1;
+    width: 70%;
+    border-radius: 100%;
+    background-color: #0f37c970;
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: rgba(255, 255, 255, 0.72);
+    gap: 1vw;
+}
+
+.inner-circle h2 {
+    font-size: 3vw;
+    font-weight: 300;
+    /* display: none; */
+}
+
+.inner-circle h4 {
+    font-size: 1vw;
+    white-space: nowrap;
+    font-weight: 200;
+    /* display: none; */
+}
+
+.imgcircle {
+    aspect-ratio: 1/1;
+    height: 65px;
+    border: 1.5px solid rgba(255, 255, 255, 0.267);
+    border-radius: 50%;
+    padding: 7px;
+    position: absolute;
+    z-index: 10;
+    filter: brightness(.9);
+    scale: .5;
+    opacity: 0;
+}
+
+.imgcircle img {
+    width: 100%;
+    object-fit: cover;
+}
+
+#page8 {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    opacity: 1;
+    z-index: 10;
+    /* display: none; */
+}
+
+#page8 video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+}
+ .overlay{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(#0049D9,#03268E);
+}
+#page8 .textbox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+    color: #fff;
+    padding-bottom: 8vw;
+}
+
+.textbox h1 {
+    font-family: font1;
+    font-size: 6vw;
+    font-weight: 300;
+}
+
+.text-box {
+    white-space: nowrap;
+    position: relative;
+    height: 13vh;
+    width: 38vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.text-box h1 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.text-box h1 span {
+    display: inline-block;
+}
+
+.textbox button {
+    font-family: font1;
+    font-size: 1vw;
+    padding: 13px 40px;
+    background-color: #fff;
+    font-weight: 300;
+    color: #1251ce;
+    border: none;
+}
+
+.textbox button::after {
+    background-color: black;
+}
+
+.magmabtn-origin {
+    color: #1251ce;
+}
+
+.magmabtn-copy {
+    color: white;
+}
+
+#page9 {
+    background-color: #03268E;
+    height: 100vh;
+    position: relative;
+    width: 100vw;
+    display: flex;
+    /* flex: wrap; */
+    position: relative;
+}
+
+.left-text {
+    /* background-color: lightgreen; */
+    background-color: transparent;
+    width: 50%;
+    padding: 5vw 10vw;
+}
+
+.leftheader {
+    /* background-color: red; */
+    color: white;
+}
+
+.leftheader h1 {
+    font-size: 5.3vw;
+    font-weight: 400;
+    padding-bottom: 10vw;
+}
+
+.left-textboxes {
+    /* background-color: red; */
+    padding: 0vw 2vw;
+    border-left: 1px solid #0956F4;
+    color: #ffffff59;
+    height: 25vw;
+}
+
+.left-textboxes h5 {
+    font-size: 1.1vw;
+    font-weight: 200;
+}
+
+.left-textboxes h2 {
+    width: 90%;
+    font-size: 3.2vw;
+    line-height: 3.1vw;
+    font-weight: 300;
+    padding: 1.5vw 0vw;
+}
+
+.left-textboxes p {
+    font-size: 1.2vw;
+    line-height: 1.5;
+    font-weight: 200;
+}
+
+.lastbox {
+    border: none;
+}
+
+.right-imgpart {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: lightpink; */
+}
+
+#page9 canvas {
+    height: 80vh;
+    position: relative;
+}
+
+#footer {
+    width: 100vw;
+    background-color: #0F0F17;
+    color: white;
+    position: relative;
+}
+
+.fthead {
+    width: 100%;
+    font-size: 3.3vw;
+    font-weight: 200;
+    padding: 15vh 10vw;
+}
+
+.fthead h1 {
+    width: 50%;
+    font-weight: 200;
+    padding-bottom: 2vw;
+}
+
+.fthead button {
+    font-size: 1vw;
+    padding: 15px 35px;
+    font-weight: 300;
+    font-family: font1;
+    text-transform: uppercase;
+    background-color: #0D34C4;
+    border: none;
+}
+
+.media-handles1 {
+    border-top: 1px solid rgba(255, 255, 255, 0.182);
+}
+
+.media-handles {
+    width: 100%;
+    height: 15vh;
+    padding: 0vw 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.171);
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.media-handles h1 {
+    font-size: 2.7vw;
+    font-weight: 200;
+}
+
+.media-handles i {
+    font-size: 2.5vw;
+    font-weight: 100;
+}
+
+.media-handles::after {
+    content: " ";
+    background-color: #0D34C4;
+    position: absolute;
+    height: 0%;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: height ease .4s;
+    z-index: -1;
+}
+
+.media-handles:hover::after {
+    height: 100%;
+}
+
+.menu-box {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4vw 10vw;
+    flex-wrap: wrap;
+}
+
+.leftmenu {
+    display: flex;
+    justify-content: space-between;
+    width: 25%;
+}
+
+.column h3 {
+    font-weight: 200;
+    font-size: 1vw;
+    width: max-content;
+    margin: 10px 0vw;
+    cursor: pointer;
+    position: relative;
+}
+
+.column h3::after {
+    content: "";
+    height: 1px;
+    width: 0%;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    transition: width ease .2s;
+}
+
+.column h3:hover::after {
+    width: 100%;
+}
+
+.rightmenu h2 {
+    font-size: 1.5vw;
+    font-weight: 300;
+    padding-bottom: 2vw;
+}
+
+.rightmenu input {
+    width: 25vw;
+    outline: none;
+    color: white;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.27);
+    padding-bottom: 10px;
+    transition: border-bottom ease .2s;
+}
+
+input::placeholder {
+    color: white;
+    font-weight: 200;
+}
+
+input:focus {
+    border-bottom: 1.2px solid white;
+}
+
+.rightmenu i {
+    font-size: 1.3vw;
+    font-weight: 100;
+    cursor: pointer;
+}
+
+#footer>h3 {
+    width: 100vw;
+    padding: 5vw 10vw;
+    font-weight: 200;
+    font-size: 1vw;
+    letter-spacing: 1px;
+}
+.white-cursor{
+    position: fixed;
+    aspect-ratio: 1/1;
+    height: 100px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scale: 0;
+    z-index: 99;
+    pointer-events: none;
+}
+.white-cursor i{
+    color: black;
+    font-size: 22px;
+}
+
+@media (max-width : 600px) {
+    .textpart{
+        padding-bottom: 20vh;
+        gap: 10vh;
+    }
+    .toph1,.btmh1, .rightper{
+        height: 10vh;
+        width: 80vw;
+    }
+    .textpart h1{
+        font-size: 12vw;
+    }
+    .textpart h2{
+        font-size: 15vw;
+    }
+    nav img {
+        width: 15vw;
+    }
+
+    .demobtn {
+        display: none;
+    }
+
+    #menubtn {
+        font-size: 5vw;
+    }
+
+    button {
+        font-size: 5vw;
+    }
+
+    .textarea {
+        width: 100%;
+        padding-left: 5vw;
+    }
+
+    .textarea h1 {
+        font-size: 15vw;
+    }
+
+    .textbtm {
+        gap: 8vw;
+    }
+
+    .textarea p {
+        font-size: 4.5vw;
+        font-weight: 200;
+        line-height: 6.5vw;
+        width: 100%;
+    }
+
+    .textarea button {
+        font-size: 3.5vw;
+    }
+
+    #page2 h3 {
+        font-size: 3.4vw;
+        font-weight: 300;
+        padding: 8vw 0vw;
+    }
+
+    #page2 h1 {
+        font-size: 8vw;
+    }
+
+    #page4 h3 {
+        font-size: 3.4vw;
+        font-weight: 300;
+        padding: 8vw 0vw;
+    }
+
+    #page4 h1 {
+        font-size: 8vw;
+    }
+
+    #page6 h3 {
+        font-size: 3.4vw;
+        font-weight: 300;
+        padding: 8vw 0vw;
+    }
+
+    #page6 h1 {
+        font-size: 8vw;
+    }
+
+    .inner-circle h2 {
+        font-size: 9vw;
+    }
+
+    .inner-circle h4 {
+        font-size: 4.5vw;
+    }
+
+    #page8 .textbox {
+        padding-bottom: 20vw;
+    }
+
+    .text-box {
+        width: 85vw;
+    }
+
+    .textbox h1 {
+        font-size: 15vw;
+    }
+
+    .textbox button {
+        font-size: 3vw;
+    }
+    .left-text {
+        width: 100%;
+        text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.343);
+    }
+    .leftheader h1 {
+        font-size: 10vw;
+    }
+    .left-textboxes{
+        height: 50vw;
+    }
+    .left-textboxes h5 {
+        font-size: 4vw;
+    }
+    .left-textboxes h2{
+        font-size: 7.5vw;
+        line-height: 8vw;
+    }
+    .left-textboxes p{
+        font-size: 4vw;
+    }
+    .right-imgpart{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        left: 0;
+        top: 0;
+    }
+    .fthead {
+        font-size: 7.5vw;
+        padding-left: 5vw;
+    }
+
+    .fthead h1 {
+        width: 100%;
+    }
+
+    .fthead button {
+        font-size: 3vw;
+    }
+
+    .media-handles {
+        height: 10vh;
+        padding: 0vw 5vw;
+
+    }
+
+    .media-handles h1 {
+        font-size: 5vw;
+    }
+
+    .media-handles i {
+        font-size: 6vw;
+    }
+
+    .menu-box {
+        padding: 5vw 5vw;
+    }
+
+    .leftmenu {
+        width: 90%;
+    }
+    .column h3 {
+        font-weight: 200;
+        font-size: 3.5vw;
+        margin: 15px 0;
+    }
+    .rightmenu{
+        width: 100%;
+        padding: 10vw 0vw;
+    }
+    .rightmenu h2 {
+        font-size: 5vw;
+        padding-bottom: 5vw;
+    }
+    .rightmenu input {
+        width: 90%;
+    }
+    .rightmenu i {
+        font-size: 5vw;
+    }
+    #footer>h3{
+        padding: 12vw 5vw;
+        font-size: 3.5vw;
+         color: rgba(255, 255, 255, 0.283);
+    }
+    .white-cursor{
+        display: none;
+    }
+}
