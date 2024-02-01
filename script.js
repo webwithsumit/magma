@@ -277,6 +277,7 @@ function canva1() {
     /canva1/bridges00196.png
     /canva1/bridges00199.png
     /canva1/bridges00202.png
+    /canva1/bridges00202.png
  `;
     return data.split("\n")[index];
   }
